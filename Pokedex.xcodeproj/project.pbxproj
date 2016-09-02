@@ -13,6 +13,7 @@
 		E6283A2B1D7542F20026B013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6283A2A1D7542F20026B013 /* Assets.xcassets */; };
 		E6283A2E1D7542F20026B013 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6283A2C1D7542F20026B013 /* LaunchScreen.storyboard */; };
 		E62962121D7549CC00879D8B /* pokemon.csv in Resources */ = {isa = PBXBuildFile; fileRef = E62962111D7549CC00879D8B /* pokemon.csv */; };
+		E6E835451D7935CA00756734 /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E835441D7935CA00756734 /* PokeCell.swift */; };
 		E6FD4D4B1D7695620027AF72 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FD4D4A1D7695620027AF72 /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		E6283A2D1D7542F20026B013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6283A2F1D7542F20026B013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E62962111D7549CC00879D8B /* pokemon.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pokemon.csv; sourceTree = "<group>"; };
+		E6E835441D7935CA00756734 /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
 		E6FD4D4A1D7695620027AF72 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +76,7 @@
 		E6E835431D79349A00756734 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E6E835441D7935CA00756734 /* PokeCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6E835451D7935CA00756734 /* PokeCell.swift in Sources */,
 				E6283A261D7542F20026B013 /* ViewController.swift in Sources */,
 				E6283A241D7542F20026B013 /* AppDelegate.swift in Sources */,
 				E6FD4D4B1D7695620027AF72 /* Pokemon.swift in Sources */,
