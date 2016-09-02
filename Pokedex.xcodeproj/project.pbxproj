@@ -58,6 +58,7 @@
 		E6283A221D7542F20026B013 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				E6E835431D79349A00756734 /* View */,
 				E6FD4D491D76954C0027AF72 /* Model */,
 				E6283A231D7542F20026B013 /* AppDelegate.swift */,
 				E6283A251D7542F20026B013 /* ViewController.swift */,
@@ -68,6 +69,13 @@
 				E6283A2F1D7542F20026B013 /* Info.plist */,
 			);
 			path = Pokedex;
+			sourceTree = "<group>";
+		};
+		E6E835431D79349A00756734 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		E6FD4D491D76954C0027AF72 /* Model */ = {
