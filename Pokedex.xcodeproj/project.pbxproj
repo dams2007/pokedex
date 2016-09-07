@@ -62,15 +62,14 @@
 		E6283A221D7542F20026B013 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				E68D427D1D7FCA8900D6BEEB /* Ressources */,
 				E68D427C1D7FC58500D6BEEB /* Controller */,
 				E68D427B1D7FC52500D6BEEB /* Util */,
 				E6E835431D79349A00756734 /* View */,
 				E6FD4D491D76954C0027AF72 /* Model */,
 				E6283A231D7542F20026B013 /* AppDelegate.swift */,
-				E6283A251D7542F20026B013 /* ViewController.swift */,
 				E6283A271D7542F20026B013 /* Main.storyboard */,
 				E6283A2A1D7542F20026B013 /* Assets.xcassets */,
-				E62962111D7549CC00879D8B /* pokemon.csv */,
 				E6283A2C1D7542F20026B013 /* LaunchScreen.storyboard */,
 				E6283A2F1D7542F20026B013 /* Info.plist */,
 			);
@@ -88,8 +87,17 @@
 		E68D427C1D7FC58500D6BEEB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E6283A251D7542F20026B013 /* ViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E68D427D1D7FCA8900D6BEEB /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				E62962111D7549CC00879D8B /* pokemon.csv */,
+			);
+			name = Ressources;
 			sourceTree = "<group>";
 		};
 		E6E835431D79349A00756734 /* View */ = {
