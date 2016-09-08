@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout  {
 
   @IBOutlet weak var collectionView :UICollectionView!
+  var soundPlayer:AVAudioPlayer!
+  
+  
   var pokemon = [Pokemon]()
   
   override func viewDidLoad() {
@@ -21,6 +25,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     collectionView.dataSource = self
     
     parsePokemonCSV()
+    initAudio()
+  }
+  
+  func initAudio() {
+    if let soundPlayer = setupAudioPlayerWithFile("music", type: "mp3") {
+      soundPlayer.prepareToPlay()
+      self.soundPlayer = soundPlayer
+      soundPlayer.volume = 0.3
+      soundPlayer.play()
+    }
   }
   
   func parsePokemonCSV () {
@@ -46,7 +60,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell {
       
-      var poke = pokemon[indexPath.row]
+      let poke = pokemon[indexPath.row]
       
       cell.configureCell(poke)
       
@@ -57,13 +71,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
   }
-  
-  
-  
-  
-  
-  
-  
+
   
   func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return 718
@@ -79,6 +87,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
     
+  }
+  
+  @IBAction func playMusic(sender: UIButton) {
+      if soundPlayer.playing {
+        soundPlayer.stop()
+        sender.alpha = 0.2
+      } else {
+        soundPlayer.play()
+        sender.alpha = 1.0
+      }
+  }
+  
+  func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer?  {
+    let path = NSBundle.mainBundle().pathForResource(file as String, ofType: type as String)
+    let url = NSURL.fileURLWithPath(path!)
+    
+    var audioPlayer:AVAudioPlayer?
+    do {
+      try audioPlayer = AVAudioPlayer(contentsOfURL: url)
+    } catch {
+      print("Player not available")
+    }
+    return audioPlayer
   }
 }
 
