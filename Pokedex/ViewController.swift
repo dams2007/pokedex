@@ -104,7 +104,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+
+    let poke: Pokemon!
     
+    if inSearchMode {
+      poke = filteredPokemon[indexPath.row]
+    } else {
+      poke = pokemon[indexPath.row]
+    }
+    
+    performSegueWithIdentifier("PokemonDetailVC", sender: poke)
+    
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "PokemonDetailVC" {
+      if let detailVC = segue.destinationViewController as? DetailViewController {
+        if let poke = sender as? Pokemon {
+          detailVC.pokemon = poke
+        }
+      }
+    }
   }
   
   @IBAction func playMusic(sender: UIButton) {
