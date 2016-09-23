@@ -29,7 +29,13 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-      pokemonName.text = pokemon.name
+        pokemonName.text = pokemon.name
+        pokemonImage.image = UIImage(named: "\(pokemon.pokedexId)")
+        
+        pokemon.downloadPokemonDetails { 
+            // this will be called after download is done
+            
+        }
     }
     @IBAction func dismissDetailViewController(_ sender: AnyObject) {
         dismiss(animated: true, completion: nil)
