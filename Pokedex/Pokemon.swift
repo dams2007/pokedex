@@ -111,8 +111,6 @@ class Pokemon {
             
             if let dict = response.result.value as? Dictionary<String, AnyObject> {
                 
-                //print(dict)
-                
                 if let weight = dict["weight"] as? String {
                   self._weight = weight
                 }
@@ -128,11 +126,6 @@ class Pokemon {
                 if let attack = dict["attack"] as? Int {
                   self._attack = "\(attack)"
                 }
-                
-//                print(self._weight)
-//                print(self._height)
-//                print(self._attack)
-//                print(self._defense)
                 
                 if let types = dict["types"] as? [Dictionary<String, String>] , types.count > 0 {
                     if let type = types[0]["name"] {
@@ -168,8 +161,6 @@ class Pokemon {
                   self._description = ""
                 }
                 
-                //print(dict["evolutions"]?.count)
-                
                 if let evolutions = dict["evolutions"] as? [Dictionary<String, AnyObject>], evolutions.count > 0 {
                     if let to = evolutions[0]["to"] as? String {
                         
@@ -189,10 +180,6 @@ class Pokemon {
 
                                     self._nextEvolutionLvl = "\(lvl)"
                                 }
-                                
-//                                print(self._nextEvolutionId)
-//                                print(self._nextEvolutionLvl)
-//                                print(self._nextEvolutionTxt)
                             }
                         }
                     

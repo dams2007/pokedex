@@ -53,7 +53,6 @@ class DetailViewController: UIViewController {
             secondEvolutionImage.isHidden = true
         } else {
             secondEvolutionImage.isHidden = false
-            print(pokemon.nextEvolutionId)
             secondEvolutionImage.image = UIImage(named: pokemon.nextEvolutionId)
             var str = "Next Evolution: \(pokemon.nextEvolutionTxt)"
             
